@@ -9,6 +9,12 @@ app.set("view engine", "ejs");
 var campgrounds = [
         {name: "Salmon Creek", image: "https://images.pexels.com/photos/475575/pexels-photo-475575.jpeg?h=350&auto=compress&cs=tinysrgb"},
         {name: "Granite Hill", image: "https://images.pexels.com/photos/506216/pexels-photo-506216.jpeg?h=350&auto=compress&cs=tinysrgb"},
+        {name: "Mountain Goat's Rest", image: "https://images.pexels.com/photos/509417/pexels-photo-509417.jpeg?h=350&auto=compress&cs=tinysrgb"},
+        {name: "Salmon Creek", image: "https://images.pexels.com/photos/475575/pexels-photo-475575.jpeg?h=350&auto=compress&cs=tinysrgb"},
+        {name: "Granite Hill", image: "https://images.pexels.com/photos/506216/pexels-photo-506216.jpeg?h=350&auto=compress&cs=tinysrgb"},
+        {name: "Mountain Goat's Rest", image: "https://images.pexels.com/photos/509417/pexels-photo-509417.jpeg?h=350&auto=compress&cs=tinysrgb"},
+        {name: "Salmon Creek", image: "https://images.pexels.com/photos/475575/pexels-photo-475575.jpeg?h=350&auto=compress&cs=tinysrgb"},
+        {name: "Granite Hill", image: "https://images.pexels.com/photos/506216/pexels-photo-506216.jpeg?h=350&auto=compress&cs=tinysrgb"},
         {name: "Mountain Goat's Rest", image: "https://images.pexels.com/photos/509417/pexels-photo-509417.jpeg?h=350&auto=compress&cs=tinysrgb"}
 ];
 //==============ROUTES=============//

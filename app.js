@@ -1,22 +1,35 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
+var express     = require("express"),
+    app         = express(),
+    bodyParser  = require("body-parser"),
+    mongoose    = require("mongoose");
 
+mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
-// To exclude .ejs file tags
 app.set("view engine", "ejs");
 
-var campgrounds = [
-        {name: "Salmon Creek", image: "https://images.pexels.com/photos/475575/pexels-photo-475575.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Granite Hill", image: "https://images.pexels.com/photos/506216/pexels-photo-506216.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Mountain Goat's Rest", image: "https://images.pexels.com/photos/509417/pexels-photo-509417.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Salmon Creek", image: "https://images.pexels.com/photos/475575/pexels-photo-475575.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Granite Hill", image: "https://images.pexels.com/photos/506216/pexels-photo-506216.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Mountain Goat's Rest", image: "https://images.pexels.com/photos/509417/pexels-photo-509417.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Salmon Creek", image: "https://images.pexels.com/photos/475575/pexels-photo-475575.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Granite Hill", image: "https://images.pexels.com/photos/506216/pexels-photo-506216.jpeg?h=350&auto=compress&cs=tinysrgb"},
-        {name: "Mountain Goat's Rest", image: "https://images.pexels.com/photos/509417/pexels-photo-509417.jpeg?h=350&auto=compress&cs=tinysrgb"}
-];
+// SCHEMA SETUP
+var campgroundSchema = new mongoose.Schema({
+   name: String,
+   image: String
+});
+
+var Campground = mongoose.model("Campground", campgroundSchema);
+
+// Campground.create(
+//     {
+//         name: "Granite Hill", 
+//         image: "https://images.pexels.com/photos/506216/pexels-photo-506216.jpeg?h=350&auto=compress&cs=tinysrgb"
+        
+//     }, 
+//     function(err, campground){
+//         if(err){
+//             console.log(err);
+//         } else {
+//             console.log("NEWLY CREATED CAMPGROUND!");
+//             console.log(campground);
+//         }
+//     });
+
 //==============ROUTES=============//
 
 app.get("/", function(req, res) {
@@ -24,17 +37,30 @@ app.get("/", function(req, res) {
 });
 
 app.get("/campgrounds", function(req, res) {
-    res.render("campgrounds", {campgrounds: campgrounds});
+    // Get all campgrounds from DB
+    Campground.find({}, function(err, allCampgrounds){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("campgrounds", {campgrounds: allCampgrounds});
+        }
+    });
 });
 
 app.post("/campgrounds", function(req, res) {
-    //get data from form and add to campgrounds array
+    //Get data from form and add to campgrounds array
     var name = req.body.name;
     var image = req.body.image;
     var newCampground = {name: name, image: image};
-    campgrounds.push(newCampground);
-    //redirect back to campgrounds page
-    res.redirect("/campgrounds");
+    // Create a new campground and save to DB
+    Campground.create(newCampground, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        } else {
+            //redirect back to campgrounds page
+            res.redirect("/campgrounds");
+        }
+    });
 });
 
 app.get("/campgrounds/new", function(req, res) {

@@ -6,17 +6,17 @@ var data = [
     {
         name: "Cloud's Rest", 
         image: "https://farm8.staticflickr.com/7179/6927088769_cc14a7c68e.jpg",
-        description: "Blah Blah Blah"
+        description: "Bacon ipsum dolor amet kielbasa corned beef turkey sausage ham kevin, picanha pork short ribs cupim frankfurter chuck pancetta. Sirloin pastrami leberkas, corned beef pancetta chuck short loin tail bacon capicola pig landjaeger. Shoulder tail chuck turducken, spare ribs short ribs doner cupim. Pork loin rump tri-tip meatball ham hock. Pork tenderloin picanha, beef brisket kevin andouille sausage chuck shankle meatball landjaeger spare ribs. Biltong ham hock pork belly shoulder frankfurter landjaeger sirloin salami spare ribs tri-tip flank capicola kielbasa turducken pork."
     },
     {
         name: "Cloud Peak", 
         image: "https://farm3.staticflickr.com/2054/2229707213_302c00f6b5.jpg",
-        description: "Blah Blah Blah"
+        description: "Bacon ipsum dolor amet kielbasa corned beef turkey sausage ham kevin, picanha pork short ribs cupim frankfurter chuck pancetta. Sirloin pastrami leberkas, corned beef pancetta chuck short loin tail bacon capicola pig landjaeger. Shoulder tail chuck turducken, spare ribs short ribs doner cupim. Pork loin rump tri-tip meatball ham hock. Pork tenderloin picanha, beef brisket kevin andouille sausage chuck shankle meatball landjaeger spare ribs. Biltong ham hock pork belly shoulder frankfurter landjaeger sirloin salami spare ribs tri-tip flank capicola kielbasa turducken pork."
     },
     {
         name: "Sunset Valley", 
         image: "https://farm9.staticflickr.com/8673/15989950903_8185ed97c3.jpg",
-        description: "Blah Blah Blah"
+        description: "Bacon ipsum dolor amet kielbasa corned beef turkey sausage ham kevin, picanha pork short ribs cupim frankfurter chuck pancetta. Sirloin pastrami leberkas, corned beef pancetta chuck short loin tail bacon capicola pig landjaeger. Shoulder tail chuck turducken, spare ribs short ribs doner cupim. Pork loin rump tri-tip meatball ham hock. Pork tenderloin picanha, beef brisket kevin andouille sausage chuck shankle meatball landjaeger spare ribs. Biltong ham hock pork belly shoulder frankfurter landjaeger sirloin salami spare ribs tri-tip flank capicola kielbasa turducken pork."
     }
 ]
 
